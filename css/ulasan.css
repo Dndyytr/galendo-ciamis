@@ -1,0 +1,690 @@
+/* reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  scroll-behavior: smooth;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+/* resert end */
+
+:root {
+  --warna-dasarCoklat: #2a0001;
+  --warna-coklat1: #bb580c;
+  --warna-coklat2: #d95e00;
+  --warna-coklat3: #9f4500;
+  --warna-coklat4: #955523;
+  --warna-coklat5: #692e00;
+  --warna-coklat6: #411d00;
+  --warna-coklat7: #ff6e00;
+  --warna-cream1: #b47a4d;
+  --warna-cream2: #dca981;
+}
+
+/* start */
+html,
+body {
+  overflow-x: hidden;
+  background-color: var(--warna-dasarCoklat);
+}
+
+/* header */
+header.scrolled {
+  background-color: rgba(42, 0, 1, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+header {
+  z-index: 9999999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  font-family: poppins, sans-serif;
+  transition: all 1s ease;
+  nav {
+    margin: 0 auto;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 0 0.3rem;
+    li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 0.2rem 0.7rem;
+      border-radius: 1rem;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    li a:hover {
+      color: var(--warna-dasarCoklat);
+      background-color: var(--warna-coklat1);
+    }
+
+    li a.active {
+      border: 2px solid var(--warna-coklat1);
+    }
+  }
+
+  figure {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+  figure img {
+    width: 3rem;
+  }
+
+  figure figcaption {
+    font-size: 1.3rem;
+    color: white;
+    font-family: pacifico, sans-serif;
+    span {
+      color: var(--warna-coklat1);
+    }
+  }
+
+  .tentang {
+    margin: 0 auto;
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 0.2rem 0.7rem;
+      border: 2px solid var(--warna-coklat1);
+      border-radius: 1rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: black;
+      background-color: var(--warna-coklat1);
+      border: 2px solid transparent;
+    }
+  }
+
+  #hamburger {
+    position: absolute;
+    right: 1.5rem;
+    cursor: pointer;
+    display: none;
+    .bar {
+      transition: all 0.4s ease-in-out;
+      width: 1.4rem;
+      height: 3px;
+      background-color: white;
+      border-radius: 1rem;
+    }
+
+    .bar:nth-child(2) {
+      margin: 5px 0;
+    }
+  }
+
+  #hamburger:hover .bar {
+    background-color: var(--warna-coklat2);
+  }
+
+  #hamburger.active .bar:nth-child(1) {
+    transform: rotate(48deg);
+    transform-origin: top left;
+  }
+
+  #hamburger.active .bar:nth-child(2) {
+    transform: scale(0);
+  }
+  #hamburger.active .bar:nth-child(3) {
+    transform: rotate(-48deg);
+    transform-origin: bottom left;
+  }
+}
+/* header */
+
+main {
+  height: 100vh;
+}
+
+/* form ulasan */
+#beri-ulasan::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 68, 0, 0.65) 0%,
+    rgba(42, 0, 1, 1) 100%
+  );
+  border-radius: 100%;
+  filter: blur(8rem);
+  z-index: 1;
+}
+
+#beri-ulasan {
+  position: relative;
+  max-width: 100rem;
+  padding: 0 1rem;
+  margin: 3rem auto 0 auto;
+
+  h2 {
+    font: normal 1.7rem/1.5 lobster, sans-serif;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 6;
+  }
+}
+
+#beri-ulasan #form-ulasan {
+  max-width: 50rem;
+  position: relative;
+  z-index: 6;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--warna-coklat6);
+  border-radius: 0.7rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+
+  .nama-pemberi,
+  .pilih-toko,
+  .rating-ulasan,
+  .isi-ulasan-anda,
+  .sarat {
+    display: flex;
+  }
+
+  .nama-pemberi label,
+  .pilih-toko label,
+  .rating-ulasan label,
+  .isi-ulasan-anda label {
+    max-width: 30%;
+    width: 100%;
+    font: normal 600 1.2rem/1.5 poppins, sans-serif;
+    color: var(--warna-cream2);
+  }
+
+  .nama-pemberi input,
+  .rating-ulasan .isi-rating-bintang,
+  .isi-ulasan-anda textarea {
+    width: 100%;
+    font: normal 500 1.2rem/1.5 poppins, sans-serif;
+    outline: none;
+  }
+
+  .nama-pemberi input,
+  .isi-ulasan-anda textarea {
+    padding: 0.2rem;
+    background-color: var(--warna-dasarCoklat);
+    border: 3px solid var(--warna-coklat5);
+    border-radius: 0.3rem;
+    transition: all 0.3s ease;
+    color: white;
+
+    &:focus {
+      border: 3px solid var(--warna-coklat1);
+      background-color: var(--warna-coklat5);
+    }
+
+    &::placeholder {
+      color: var(--warna-coklat4);
+    }
+  }
+
+  .pilih-toko select {
+    width: 100%;
+    font: normal 400 1.2rem/1.5 poppins, sans-serif;
+    outline: none;
+    padding: 0.4rem;
+    background-color: var(--warna-coklat4);
+    border-radius: 0.3rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+  }
+
+  .rating-ulasan .isi-rating-bintang {
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    i {
+      font-size: 1.5em;
+      color: var(--warna-coklat7);
+      cursor: pointer;
+    }
+
+    .caption-rating {
+      color: white;
+      align-self: flex-end;
+      font-weight: 400;
+    }
+  }
+
+  .sarat {
+    display: flex;
+    gap: 0.5rem;
+    label {
+      font: normal 400 1rem/1.5 poppins, sans-serif;
+      color: white;
+    }
+  }
+
+  .sarat input[type="checkbox"] {
+    appearance: none; /* Hilangkan tampilan default */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 2rem;
+    width: 100%;
+    height: 1.8rem;
+    border: 3px solid var(--warna-coklat3); /* Border putih */
+    background-color: transparent; /* Background transparan */
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    border-radius: 0.3rem;
+    align-self: center;
+  }
+
+  .sarat input[type="checkbox"]:checked {
+    background-color: transparent; /* Tetap transparan */
+    border: 3px solid var(--warna-coklat2);
+  }
+
+  .sarat input[type="checkbox"]::before {
+    content: "\2713"; /* Simbol ceklis */
+    font-size: 1.3rem;
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+    color: var(--warna-coklat2); /* Warna ceklis putih */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Sembunyikan default */
+  }
+
+  .sarat input[type="checkbox"]:checked::before {
+    display: block; /* Tampilkan ceklis jika dicentang */
+  }
+
+  #submit-ulasan {
+    width: max-content;
+    color: white;
+    font: normal 500 1.2rem/1.5 poppins, sans-serif;
+    background-color: var(--warna-coklat3);
+    padding: 0.3rem 5rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    align-self: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--warna-cream1);
+      color: var(--warna-dasarCoklat);
+    }
+  }
+}
+
+/* media query */
+@media screen and (max-width: 1024px) {
+  /* header */
+  header nav ul li a,
+  header .tentang a,
+  #beri-ulasan #form-ulasan .sarat label {
+    font-size: 0.9rem;
+  }
+
+  header figure img {
+    width: 2.5rem;
+  }
+
+  header figure figcaption {
+    font-size: 1.2rem;
+  }
+
+  /* beri ulasan */
+  #beri-ulasan h2 {
+    font-size: 1.6rem;
+  }
+
+  #beri-ulasan #form-ulasan .nama-pemberi label,
+  #beri-ulasan #form-ulasan .pilih-toko label,
+  #beri-ulasan #form-ulasan .rating-ulasan label,
+  #beri-ulasan #form-ulasan .isi-ulasan-anda label,
+  #beri-ulasan #form-ulasan .nama-pemberi input,
+  #beri-ulasan #form-ulasan .pilih-toko select,
+  #beri-ulasan #form-ulasan .isi-ulasan-anda textarea,
+  #beri-ulasan #form-ulasan .rating-ulasan .isi-rating-bintang,
+  #beri-ulasan #form-ulasan #submit-ulasan {
+    font-size: 1.1rem;
+  }
+
+  #beri-ulasan #form-ulasan .sarat input[type="checkbox"] {
+    height: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  /* header */
+  /* header */
+  header {
+    height: 2.6rem;
+    #hamburger {
+      display: block;
+    }
+    figure {
+      margin: -0.6rem 0;
+    }
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 2rem 0;
+    position: absolute;
+    background-color: rgba(42, 0, 1, 0.5);
+    backdrop-filter: blur(6px);
+    width: 11rem;
+    padding-top: 2rem;
+    right: 0;
+    top: 3.2rem;
+    height: 100vh;
+    z-index: 99999;
+    transform: translateX(100%);
+    transition: all 0.4s ease-in-out;
+    align-items: center;
+  }
+
+  header nav ul.active {
+    transform: translateX(0);
+  }
+
+  header .tentang {
+    margin: 0;
+    margin-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  /* header */
+  header {
+    padding: 0 0.5rem;
+
+    nav ul {
+      top: 2.6rem;
+    }
+  }
+
+  header nav ul li a,
+  header .tentang a {
+    font-size: 0.8rem;
+  }
+
+  header figure figcaption {
+    font-size: 1rem;
+  }
+
+  header figure img {
+    width: 2.3rem;
+  }
+
+  /* beri ulasan */
+  #beri-ulasan h2 {
+    font-size: 1.3rem;
+  }
+
+  #beri-ulasan #form-ulasan .sarat label {
+    font-size: 0.7rem;
+  }
+
+  #beri-ulasan #form-ulasan .nama-pemberi label,
+  #beri-ulasan #form-ulasan .pilih-toko label,
+  #beri-ulasan #form-ulasan .rating-ulasan label,
+  #beri-ulasan #form-ulasan .isi-ulasan-anda label,
+  #beri-ulasan #form-ulasan .nama-pemberi input,
+  #beri-ulasan #form-ulasan .pilih-toko select,
+  #beri-ulasan #form-ulasan .isi-ulasan-anda textarea,
+  #beri-ulasan #form-ulasan .rating-ulasan .isi-rating-bintang,
+  #beri-ulasan #form-ulasan #submit-ulasan {
+    font-size: 0.9rem;
+  }
+
+  #beri-ulasan #form-ulasan #submit-ulasan {
+    padding: 0.3rem 3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* header */
+  header nav ul li a,
+  header .tentang a {
+    font-size: 0.7rem;
+  }
+
+  header #hamburger .bar {
+    width: 1.3rem;
+    height: 2.5px;
+  }
+
+  header {
+    height: 2.5rem;
+
+    nav ul {
+      top: 2.5rem;
+    }
+  }
+
+  header figure figcaption {
+    font-size: 0.9rem;
+  }
+
+  header figure img {
+    width: 2rem;
+  }
+
+  /* beri ulasan */
+  #beri-ulasan h2 {
+    font-size: 1.1rem;
+  }
+
+  #beri-ulasan #form-ulasan .sarat label {
+    font-size: 0.6rem;
+  }
+
+  #beri-ulasan #form-ulasan .nama-pemberi label,
+  #beri-ulasan #form-ulasan .pilih-toko label,
+  #beri-ulasan #form-ulasan .rating-ulasan label,
+  #beri-ulasan #form-ulasan .isi-ulasan-anda label,
+  #beri-ulasan #form-ulasan .nama-pemberi input,
+  #beri-ulasan #form-ulasan .pilih-toko select,
+  #beri-ulasan #form-ulasan .isi-ulasan-anda textarea,
+  #beri-ulasan #form-ulasan .rating-ulasan .isi-rating-bintang,
+  #beri-ulasan #form-ulasan #submit-ulasan {
+    font-size: 0.8rem;
+  }
+
+  #beri-ulasan #form-ulasan .sarat input[type="checkbox"] {
+    height: 1.7rem;
+    max-width: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* header */
+  header nav ul li a,
+  header .tentang a {
+    font-size: 0.6rem;
+  }
+
+  header #hamburger .bar {
+    width: 1.25rem;
+    height: 2.2px;
+  }
+
+  header figure figcaption {
+    font-size: 0.8rem;
+  }
+
+  header figure img {
+    width: 1.8rem;
+  }
+
+  /* beri ulasan */
+  #beri-ulasan #form-ulasan .sarat label {
+    font-size: 0.55rem;
+  }
+
+  #beri-ulasan #form-ulasan .nama-pemberi label,
+  #beri-ulasan #form-ulasan .pilih-toko label,
+  #beri-ulasan #form-ulasan .rating-ulasan label,
+  #beri-ulasan #form-ulasan .isi-ulasan-anda label,
+  #beri-ulasan #form-ulasan .nama-pemberi input,
+  #beri-ulasan #form-ulasan .pilih-toko select,
+  #beri-ulasan #form-ulasan .isi-ulasan-anda textarea,
+  #beri-ulasan #form-ulasan .rating-ulasan .isi-rating-bintang,
+  #beri-ulasan #form-ulasan #submit-ulasan {
+    font-size: 0.7rem;
+  }
+
+  #beri-ulasan #form-ulasan .sarat input[type="checkbox"] {
+    height: 1.6rem;
+    max-width: 1.7rem;
+  }
+}

@@ -1,0 +1,2527 @@
+/* reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  scroll-behavior: smooth;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+/* resert end */
+
+:root {
+  --warna-dasarCoklat: #2a0001;
+  --warna-coklat1: #bb580c;
+  --warna-coklat2: #d95e00;
+  --warna-coklat3: #9f4500;
+  --warna-coklat4: #955523;
+  --warna-coklat5: #692e00;
+  --warna-coklat6: #ff6e00;
+  --warna-coklat7: #3d1b00;
+  --warna-cream1: #b47a4d;
+  --warna-cream2: #dca981;
+}
+
+/* start */
+html,
+body {
+  overflow-x: hidden;
+  background-color: var(--warna-dasarCoklat);
+}
+
+/* header */
+header.scrolled {
+  background-color: rgba(42, 0, 1, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+header {
+  z-index: 9999999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  font-family: poppins, sans-serif;
+  transition: all 1s ease;
+  nav {
+    margin: 0 auto;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 0 0.3rem;
+    li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 0.2rem 0.7rem;
+      border-radius: 1rem;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    li a:hover {
+      color: var(--warna-dasarCoklat);
+      background-color: var(--warna-coklat1);
+    }
+
+    li a.active {
+      border: 2px solid var(--warna-coklat1);
+    }
+  }
+
+  figure {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+  figure img {
+    width: 3rem;
+  }
+
+  figure figcaption {
+    font-size: 1.3rem;
+    color: white;
+    font-family: pacifico, sans-serif;
+    span {
+      color: var(--warna-coklat1);
+    }
+  }
+
+  .tentang {
+    margin: 0 auto;
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 0.2rem 0.7rem;
+      border: 2px solid var(--warna-coklat1);
+      border-radius: 1rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: black;
+      background-color: var(--warna-coklat1);
+      border: 2px solid transparent;
+    }
+  }
+
+  #hamburger {
+    position: absolute;
+    right: 1.5rem;
+    cursor: pointer;
+    display: none;
+    .bar {
+      transition: all 0.4s ease-in-out;
+      width: 1.4rem;
+      height: 3px;
+      background-color: white;
+      border-radius: 1rem;
+    }
+
+    .bar:nth-child(2) {
+      margin: 5px 0;
+    }
+  }
+
+  #hamburger:hover .bar {
+    background-color: var(--warna-coklat2);
+  }
+
+  #hamburger.active .bar:nth-child(1) {
+    transform: rotate(48deg);
+    transform-origin: top left;
+  }
+
+  #hamburger.active .bar:nth-child(2) {
+    transform: scale(0);
+  }
+  #hamburger.active .bar:nth-child(3) {
+    transform: rotate(-48deg);
+    transform-origin: bottom left;
+  }
+}
+/* header */
+
+/* beranda */
+#beranda {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-left: 1rem;
+}
+
+/* artikel */
+#beranda .artikel-beranda {
+  flex-basis: 100%;
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font: normal 1.7rem/1 Lobster, sans-serif;
+    color: white;
+    text-align: center;
+  }
+
+  p {
+    color: white;
+    font: normal 1rem/1.5 Poppins, sans-serif;
+    text-align: justify;
+    margin: 1rem 0;
+  }
+
+  .sertifikasi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .isi-sertifikasi:nth-child(2) figure {
+      border-left: 1.5px solid var(--warna-coklat4);
+      border-right: 1.5px solid var(--warna-coklat4);
+    }
+
+    .isi-sertifikasi figure {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .isi-sertifikasi p {
+      color: var(--warna-cream1);
+      font: normal 700 0.7rem/1.5 poppins, sans-serif;
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .selengkapnya {
+    text-decoration: none;
+    background-color: white;
+    font: italic 700 1rem/1.5 poppins, sans-serif;
+    color: var(--warna-dasarCoklat);
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+    margin-top: 1rem;
+    align-self: center;
+    transition: all 0.3s ease;
+  }
+
+  .selengkapnya:hover {
+    background-color: var(--warna-coklat3);
+    color: white;
+  }
+}
+
+/* galendo slider */
+#beranda .galendo-slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 68, 0, 0.65) 0%,
+    rgba(42, 0, 1, 1) 100%
+  );
+  border-radius: 100%;
+  filter: blur(8rem);
+}
+
+#beranda .galendo-slider {
+  position: relative;
+  max-width: 40rem;
+  z-index: 9;
+
+  .wadah-gambar {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    z-index: 999;
+
+    button {
+      color: white;
+      background-color: var(--warna-coklat4);
+      padding: 0.3rem 1rem;
+      font-size: 2rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+      box-shadow: 4px 4px 10px black;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--warna-coklat1);
+      color: var(--warna-dasarCoklat);
+    }
+
+    button:active {
+      transform: scale(0.9);
+    }
+
+    #next {
+      position: absolute;
+      right: 1rem;
+    }
+  }
+
+  .wadah-gambar::after {
+    content: "";
+    position: absolute;
+    bottom: 15%;
+    width: 90%;
+    height: 10%;
+    background-color: black;
+    border-radius: 100%;
+    filter: blur(20px);
+    left: 3%;
+  }
+
+  .wadah-gambar .gambar-galendo {
+    z-index: 9;
+    position: relative;
+    display: flex;
+    margin: -4rem -4rem -4rem -4rem;
+    transition: all 0.8s ease-out;
+
+    img {
+      z-index: 99;
+      width: 100%;
+      max-width: 45rem;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.4));
+      transition: all 0.8s ease-out;
+      transform: scale(1);
+    }
+
+    .kecil {
+      transform: scale(0.5);
+    }
+
+    img:nth-child(2) {
+      margin-right: -3rem;
+    }
+
+    img:nth-child(2),
+    img:nth-child(3) {
+      max-width: 25rem;
+      width: 100%;
+      margin-top: -5rem;
+    }
+  }
+
+  .kualitas {
+    margin-top: -2rem;
+  }
+
+  .kualitas h3 {
+    z-index: 9;
+    position: relative;
+    font: normal 700 1rem/1.5 poppins, sans-serif;
+    color: var(--warna-cream1);
+    text-align: center;
+  }
+
+  .kualitas .kualitas-flex {
+    z-index: 9;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+
+    .isi-kualitas:nth-child(1) {
+      flex-shrink: 3;
+    }
+
+    .isi-kualitas:nth-child(2) {
+      flex-shrink: 3;
+
+      figure {
+        border-left: 1.5px solid var(--warna-coklat4);
+        border-right: 1.5px solid var(--warna-coklat4);
+      }
+    }
+
+    .isi-kualitas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+
+      figure {
+        margin-top: 0.3rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      figure i {
+        border: 3px solid var(--warna-coklat3);
+        border-radius: 100%;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        color: var(--warna-coklat3);
+      }
+
+      h4 {
+        font: normal 600 0.8rem/1.5 poppins, sans-serif;
+        color: white;
+      }
+
+      p {
+        text-align: center;
+        font: normal 600 0.8rem/1.5 poppins, sans-serif;
+        color: var(--warna-cream1);
+      }
+    }
+  }
+}
+
+/* mouse scroll */
+.mouse-scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  z-index: 9;
+
+  p {
+    color: var(--warna-cream1);
+    font-family: pacifico, sans-serif;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.mouse-scroll.mouse-hide {
+  opacity: 0;
+}
+
+.mouse {
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+  border: 1.9px solid var(--warna-cream1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mouse-wheel {
+  width: 1rem;
+  height: 1.5rem;
+  border: 2px solid var(--warna-coklat1);
+  border-radius: 8rem;
+  display: flex;
+  justify-content: center;
+  .scroll {
+    width: 2.7px;
+    height: 6px;
+    background-color: var(--warna-coklat1);
+    border-radius: 1rem;
+    margin-top: 2px;
+    animation: scroll 1s linear infinite;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+/* mouse scroll */
+
+/* keistimewaan */
+#keistimewaan h2,
+#pembuatan h2,
+#produk h2,
+#toko h2,
+#ulasan h2 {
+  font: normal 1.7rem/1.5 lobster, sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 6;
+}
+
+#keistimewaan h3,
+#produk h3 {
+  font: normal 1.3rem/1.5 pacifico, sans-serif;
+  text-align: center;
+  color: var(--warna-coklat1);
+  position: relative;
+  z-index: 6;
+}
+
+#keistimewaan {
+  position: relative;
+  padding: 0 1rem;
+  padding-top: 2rem;
+  z-index: 6;
+}
+
+#keistimewaan .wadah-keistimewaan {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .wadah-figure-keistimewaan {
+    max-width: 25rem;
+    flex-basis: 55%;
+    position: relative;
+  }
+
+  .wadah-figure-keistimewaan::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: radial-gradient(
+      circle,
+      rgba(255, 68, 0, 0.65) 0%,
+      rgba(42, 0, 1, 1) 100%
+    );
+    border-radius: 100%;
+    filter: blur(8rem);
+    z-index: 1;
+    transform: scale(1.1);
+  }
+
+  .wadah-figure-keistimewaan .figure-keistimewaan {
+    width: 100%;
+    border-radius: 100%;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: 100%;
+      object-fit: cover;
+      transform: rotate(-130deg);
+    }
+  }
+
+  .wadah-flex-keistimewaan {
+    max-width: 40rem;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .wadah-flex-keistimewaan .wadah-artikel:nth-child(1),
+  .wadah-flex-keistimewaan .wadah-artikel:nth-child(5) {
+    margin-left: -5rem;
+  }
+  .wadah-flex-keistimewaan .wadah-artikel:nth-child(2),
+  .wadah-flex-keistimewaan .wadah-artikel:nth-child(4) {
+    margin-left: -1rem;
+  }
+
+  .wadah-flex-keistimewaan .wadah-artikel.active {
+    transform: translateX(0);
+  }
+
+  .wadah-flex-keistimewaan .wadah-artikel {
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 9;
+    transform: translateX(90%);
+    will-change: transform;
+    transition: all 0.9s ease-out;
+
+    img {
+      width: 45px;
+      align-self: center;
+    }
+
+    i {
+      font-size: 35px;
+      margin-right: 0.3rem;
+      align-self: center;
+      color: var(--warna-coklat3);
+    }
+
+    article h4 {
+      font: normal 700 1rem/1.5 poppins, sans-serif;
+      color: var(--warna-cream1);
+    }
+
+    article p {
+      font: normal 400 0.8rem/1.5 poppins, sans-serif;
+      color: white;
+      text-align: justify;
+    }
+  }
+}
+/* keistimewaan end */
+
+/* pembuatan */
+#pembuatan {
+  position: relative;
+  padding-left: 1rem;
+  padding-top: 2rem;
+  z-index: 6;
+}
+
+#pembuatan .wadah-pembuatan {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+
+  .artikel-pembuatan {
+    flex-basis: 100%;
+    max-width: 54rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .isi-artikel-pembuatan.active {
+      transform: translateX(0);
+    }
+
+    .isi-artikel-pembuatan {
+      display: flex;
+      gap: 1rem;
+      transform: translateX(-90%);
+      will-change: transform;
+      transition: all 0.9s ease-out;
+
+      .isi-proses {
+        padding: 0.5rem 0.8rem;
+        border-radius: 0.7rem;
+      }
+    }
+
+    .isi-artikel-pembuatan .isi-proses.active {
+      background-color: var(--warna-coklat4);
+      box-shadow: 0.5rem 0.4rem 1rem rgba(0, 0, 0, 0.6);
+      transition: all 1s ease;
+
+      h3 {
+        color: var(--warna-dasarCoklat);
+      }
+    }
+
+    .isi-artikel-pembuatan img {
+      width: 50px;
+      margin-right: -0.4rem;
+    }
+
+    .isi-artikel-pembuatan i {
+      font-size: 50px;
+      color: var(--warna-coklat3);
+      margin-left: 0.3rem;
+    }
+
+    .isi-artikel-pembuatan .isi-proses h3 {
+      font: normal 700 1rem/1.5 poppins, sans-serif;
+      color: var(--warna-cream1);
+    }
+
+    .isi-artikel-pembuatan .isi-proses p {
+      font: normal 400 0.8rem/1.5 poppins, sans-serif;
+      color: white;
+      text-align: justify;
+    }
+  }
+
+  .gambar-pembuatan {
+    flex-basis: 50%;
+    max-width: 24rem;
+    position: relative;
+
+    .isi-gambar-pembuatan::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      border: 8px dashed var(--warna-coklat4);
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      transform: scale(0.7);
+      z-index: 2;
+    }
+
+    .isi-gambar-pembuatan::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle,
+        rgba(255, 68, 0, 0.65) 0%,
+        rgba(42, 0, 1, 1) 100%
+      );
+      border-radius: 100%;
+      filter: blur(8rem);
+      z-index: 1;
+      transform: scale(0.7);
+    }
+
+    .panah-pembuatan {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: absolute;
+      right: 2rem;
+      top: 12rem;
+
+      z-index: 5;
+
+      button {
+        background-color: var(--warna-coklat4);
+        border-radius: 0.5rem;
+        padding: 0.3rem 0.5rem;
+        font-size: 1.7rem;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.6);
+
+        &:hover {
+          background-color: var(--warna-coklat1);
+          color: var(--warna-dasarCoklat);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    .isi-gambar-pembuatan {
+      display: grid;
+      position: absolute;
+      right: -13rem;
+      max-width: 30rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      transition: all 0.7s ease-out;
+
+      figure {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        position: relative;
+        z-index: 3;
+        box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.6);
+      }
+
+      figure img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        object-fit: cover;
+        transition: all 0.7s ease-out;
+      }
+
+      figure:nth-child(1) {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      figure:nth-child(2) {
+        grid-column: 2;
+        grid-row: 3;
+      }
+      figure:nth-child(3) {
+        grid-column: 3;
+        grid-row: 2;
+      }
+
+      figure:nth-child(4) {
+        grid-column: 2;
+        grid-row: 1;
+      }
+    }
+  }
+}
+
+/* pembuatan end */
+
+/* produk */
+#produk {
+  position: relative;
+  padding: 0 1rem;
+  margin-top: 2rem;
+  z-index: 6;
+}
+
+#produk .wadah-produk::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 68, 0, 0.65) 0%,
+    rgba(42, 0, 1, 1) 100%
+  );
+  border-radius: 100%;
+  filter: blur(8rem);
+  z-index: 1;
+}
+
+#produk .wadah-produk {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 3;
+
+  .isi-produk:hover {
+    background: linear-gradient(
+      0deg,
+      rgba(42, 0, 1, 1) 0%,
+      rgba(105, 46, 0, 1) 100%
+    );
+    border-radius: 1rem 1rem 0 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+
+    figure img {
+      transform: scale(1.5);
+    }
+  }
+
+  .isi-produk {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+    width: 13rem;
+    border-radius: 1rem 1rem 0 0;
+    border-top: 3px solid var(--warna-coklat5);
+    border-left: 3px solid var(--warna-coklat5);
+    border-right: 3px solid var(--warna-coklat5);
+  }
+
+  .isi-produk figure {
+    width: 50%;
+  }
+
+  .isi-produk figure img {
+    width: 100%;
+    filter: drop-shadow(0 0 0.8rem rgba(0, 0, 0, 0.9));
+    transition: all 0.5s ease;
+  }
+
+  .isi-produk .katalog-produk {
+    margin: 2rem 0 1rem 0;
+    padding: 0 0.5rem;
+
+    h4 {
+      font: normal 700 0.9rem/1.5 poppins, sans-serif;
+      color: var(--warna-cream1);
+      text-align: center;
+    }
+
+    p {
+      font: normal 400 0.65rem/1.5 poppins, sans-serif;
+      color: white;
+      text-align: justify;
+      margin: 0.3rem 0;
+    }
+
+    .toko {
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: var(--warna-coklat4);
+      font-family: poppins, sans-serif;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 1.7em;
+        margin-right: 0.3rem;
+      }
+
+      &:hover {
+        color: var(--warna-coklat2);
+      }
+    }
+
+    .harga {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--warna-coklat2);
+
+      i {
+        margin-right: 0.3rem;
+      }
+    }
+
+    .beli {
+      font: italic 500 0.8rem/1.5 poppins, sans-serif;
+      color: white;
+      text-decoration: none;
+      background-color: var(--warna-coklat3);
+      padding: 0.3rem 1.5rem;
+      border-radius: 1rem;
+      display: block;
+      width: max-content;
+      margin: 0.5rem auto 0 auto;
+      box-shadow: 0 0 1rem black;
+      transition: all 0.3s ease;
+
+      i {
+        margin-right: 0.3rem;
+      }
+
+      &:hover {
+        background-color: var(--warna-cream1);
+        color: var(--warna-dasarCoklat);
+      }
+    }
+  }
+}
+
+/* toko */
+#toko {
+  position: relative;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  z-index: 6;
+}
+
+#toko .wadah-toko::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 68, 0, 0.65) 0%,
+    rgba(42, 0, 1, 1) 100%
+  );
+  border-radius: 100%;
+  filter: blur(8rem);
+  z-index: 1;
+}
+
+#toko .wadah-toko {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 21rem);
+  justify-content: center;
+  position: relative;
+  max-width: 100rem;
+  margin: 1rem auto 0 auto;
+
+  gap: 1rem;
+
+  .isi-toko {
+    display: flex;
+    background-color: var(--warna-dasarCoklat);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+    overflow: hidden;
+    position: relative;
+    z-index: 9;
+  }
+
+  .isi-toko .map {
+    flex-basis: 50%;
+    width: 100%;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .isi-toko .ket-toko {
+    flex-basis: 50%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: poppins, sans-serif;
+
+    h4 {
+      font: normal 700 0.8rem/1.5 poppins, sans-serif;
+      color: var(--warna-cream1);
+      text-align: center;
+    }
+
+    .isi-ket-toko {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-weight: 400;
+    }
+
+    .isi-ket-toko .wadah-ket-toko {
+      display: flex;
+      font-size: 0.7rem;
+      gap: 0.3rem;
+
+      i {
+        color: var(--warna-coklat3);
+        font-size: 1.5em;
+      }
+    }
+
+    .isi-ket-toko .wadah-ket-toko .alamat-toko {
+      color: white;
+      text-align: justify;
+      line-height: 0.9rem;
+    }
+
+    .isi-ket-toko .rating {
+      color: white;
+      font-size: 0.7rem;
+
+      .bintang {
+        color: var(--warna-coklat6);
+        font-size: 1.3em;
+      }
+    }
+
+    .isi-ket-toko .buka {
+      color: white;
+      font-size: 0.7rem;
+
+      i {
+        color: var(--warna-coklat3);
+        font-size: 1.3em;
+      }
+
+      .buka-jam {
+        color: var(--warna-coklat3);
+        margin: 0 0.3rem;
+      }
+    }
+
+    .isi-ket-toko .telepon {
+      color: white;
+      font-size: 0.7rem;
+
+      i {
+        color: var(--warna-coklat3);
+        font-size: 1.3em;
+        margin-right: 0.3rem;
+      }
+    }
+
+    .isi-ket-toko .lihat-detail {
+      color: white;
+      font-size: 0.7rem;
+      text-decoration: none;
+      background-color: var(--warna-coklat3);
+      padding: 0.3rem 0.5rem;
+      border-radius: 1rem;
+      text-align: center;
+
+      &:hover {
+        background-color: var(--warna-cream1);
+        color: var(--warna-dasarCoklat);
+      }
+    }
+  }
+}
+
+/* ulasan */
+#ulasan {
+  position: relative;
+  z-index: 6;
+  margin-top: 2rem;
+}
+
+#ulasan .berikan-ulasan {
+  display: block;
+  width: max-content;
+  margin: 1rem auto;
+  background-color: var(--warna-coklat3);
+  color: white;
+  text-decoration: none;
+  font: italic 500 1rem/1.5 poppins, sans-serif;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 9;
+
+  &:hover {
+    background-color: var(--warna-cream1);
+    color: var(--warna-dasarCoklat);
+  }
+}
+
+#ulasan .wadah-ulasan::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 80%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 68, 0, 0.65) 0%,
+    rgba(42, 0, 1, 1) 100%
+  );
+  border-radius: 100%;
+  filter: blur(8rem);
+  z-index: 1;
+}
+
+#ulasan .wadah-ulasan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100rem;
+  margin: 0 auto;
+
+  .wadah-card {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    margin: 0.5rem 0;
+    transition: all 0.5s ease-out;
+    position: relative;
+    z-index: 9;
+  }
+
+  .wadah-card .card-ulasan {
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--warna-coklat5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.7rem;
+    position: relative;
+    margin: 0 -3rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+    transition: all 0.5s ease-out;
+
+    .flex1-ulasan {
+      font-family: poppins, sans-serif;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .flex1-ulasan .toko-ulasan,
+    .flex1-ulasan .tanggal-ulasan {
+      color: var(--warna-cream2);
+      font-weight: 600;
+      font-size: 0.9rem;
+
+      i {
+        color: var(--warna-coklat1);
+        font-size: 1.5em;
+      }
+    }
+
+    .flex1-ulasan .rating-ulasan {
+      color: var(--warna-cream2);
+      font-size: 0.9rem;
+
+      .bintang-ulasan {
+        color: var(--warna-coklat2);
+        font-size: 1.3em;
+      }
+    }
+
+    .flex1-ulasan .alamat-ulasan {
+      display: flex;
+      font-size: 0.7rem;
+      color: var(--warna-cream2);
+      gap: 0.3rem;
+      line-height: 0.8rem;
+
+      i {
+        color: var(--warna-coklat1);
+        font-size: 1.9em;
+      }
+    }
+
+    .flex1-ulasan .isi-ulasan {
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 400;
+      line-height: 1.1rem;
+      text-align: justify;
+    }
+
+    .flex2-ulasan {
+      background-color: var(--warna-coklat3);
+      padding: 1rem 0;
+      text-align: center;
+      font: normal 700 1rem/1.5 poppins, sans-serif;
+      color: var(--warna-dasarCoklat);
+    }
+  }
+
+  .panah-ulasan {
+    margin: 1rem 0;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    z-index: 9;
+
+    #kiri-ulasan,
+    #kanan-ulasan {
+      font-size: 2rem;
+      background-color: var(--warna-coklat4);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 0.7rem;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    #kiri-ulasan:hover,
+    #kanan-ulasan:hover {
+      background-color: var(--warna-coklat2);
+      color: var(--warna-dasarCoklat);
+    }
+
+    #kiri-ulasan:active,
+    #kanan-ulasan:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+/* tentang */
+#tentang {
+  position: relative;
+  background-color: var(--warna-coklat7);
+  overflow: hidden;
+  z-index: 9;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+  margin-top: 2rem;
+
+  .garis {
+    width: 100%;
+    height: 1.3px;
+    background-color: white;
+  }
+
+  #copyright-footer {
+    text-align: center;
+    color: white;
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1rem 0;
+  }
+}
+
+#tentang .isi-footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+  z-index: 9;
+
+  h5 {
+    font-size: 1rem;
+    font-family: poppins, sans-serif;
+    font-weight: 700;
+    color: var(--warna-coklat2);
+  }
+
+  /* logo */
+  .figure-footer {
+    display: flex;
+    gap: 0.3rem;
+    max-width: 25rem;
+    flex-basis: 35%;
+    width: 100%;
+
+    img {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .caption-footer .judul-footer {
+      font-family: pacifico, sans-serif;
+      font-weight: normal;
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+      color: white;
+
+      span {
+        color: var(--warna-coklat2);
+      }
+    }
+
+    .caption-footer p {
+      font-size: 0.8rem;
+      color: var(--warna-cream2);
+      font-family: poppins, sans-serif;
+      text-align: justify;
+      font-weight: 500;
+      line-height: 0.9rem;
+    }
+  }
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* flex-basis: 50%; */
+
+    a {
+      color: var(--warna-cream2);
+      font-family: poppins, sans-serif;
+      font-size: 0.8rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.5s ease;
+    }
+
+    a:hover {
+      color: var(--warna-coklat1);
+    }
+  }
+
+  .follow-us {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* flex-basis: 50%; */
+
+    .sosmed-footer {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .sosmed-footer a i {
+      font-size: 1.8rem;
+      color: var(--warna-cream2);
+      transition: all 0.5s ease;
+    }
+
+    .sosmed-footer a:hover i {
+      color: var(--warna-coklat1);
+    }
+  }
+
+  .emailphone-footer {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    /* flex-basis: 50%; */
+  }
+
+  .emailphone-footer p {
+    font-size: 0.9rem;
+    color: var(--warna-cream2);
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 500;
+    align-items: flex-end;
+    font-family: poppins, sans-serif;
+
+    i {
+      font-size: 1.3em;
+    }
+  }
+}
+
+/* media query */
+@media screen and (max-width: 1024px) {
+  /* header */
+  header nav ul li a,
+  header .tentang a,
+  #beranda .artikel-beranda p,
+  #beranda .artikel-beranda .selengkapnya,
+  #beranda .galendo-slider .kualitas h3,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    h4,
+  #pembuatan
+    .wadah-pembuatan
+    .artikel-pembuatan
+    .isi-artikel-pembuatan
+    .isi-proses
+    h3 {
+    font-size: 0.9rem;
+  }
+
+  header figure img {
+    width: 2.5rem;
+  }
+
+  header figure figcaption,
+  #keistimewaan h3,
+  #produk h3 {
+    font-size: 1.2rem;
+  }
+
+  /* beranda */
+  #beranda .artikel-beranda h2,
+  #keistimewaan h2,
+  #pembuatan h2,
+  #produk h2,
+  #toko h2,
+  #ulasan h2 {
+    font-size: 1.6rem;
+  }
+
+  #beranda .artikel-beranda .sertifikasi .isi-sertifikasi figure img {
+    width: 45px;
+    height: 45px;
+  }
+
+  #beranda .artikel-beranda .sertifikasi .isi-sertifikasi p,
+  #produk .wadah-produk .isi-produk .katalog-produk p {
+    font-size: 0.6rem;
+  }
+
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo {
+    margin: -2rem -2rem -2rem 0;
+  }
+
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(2),
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(3) {
+    width: 60%;
+  }
+
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(2) {
+    margin-right: -1.4rem;
+    margin-left: -2rem;
+  }
+
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas figure i {
+    font-size: 1.3rem;
+  }
+
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas h4,
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas p,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    p,
+  #pembuatan
+    .wadah-pembuatan
+    .artikel-pembuatan
+    .isi-artikel-pembuatan
+    .isi-proses
+    p,
+  #produk .wadah-produk .isi-produk .katalog-produk .beli {
+    font-size: 0.7rem;
+  }
+
+  /* keistimewaan */
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    img {
+    width: 40px;
+  }
+  #keistimewaan .wadah-keistimewaan .wadah-flex-keistimewaan .wadah-artikel i {
+    font-size: 30px;
+  }
+
+  /* produk */
+  #produk .wadah-produk .isi-produk .katalog-produk h4 {
+    font-size: 0.8rem;
+  }
+
+  #produk .wadah-produk .isi-produk .katalog-produk .toko {
+    font-size: 0.65rem;
+  }
+
+  #produk .wadah-produk .isi-produk .katalog-produk .harga {
+    font-size: 1rem;
+  }
+
+  #produk .wadah-produk .isi-produk {
+    width: 12rem;
+  }
+
+  /* toko */
+  #toko .wadah-toko {
+    grid-template-columns: repeat(auto-fit, 18.5rem);
+  }
+
+  #toko .wadah-toko .isi-toko .ket-toko h4 {
+    font-size: 0.7rem;
+  }
+
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .wadah-ket-toko,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .rating,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .buka,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .telepon,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .lihat-detail {
+    font-size: 0.6rem;
+  }
+
+  /* ulasan */
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .toko-ulasan,
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .tanggal-ulasan,
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .rating-ulasan,
+  #tentang .isi-footer .emailphone-footer p {
+    font-size: 0.8rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .alamat-ulasan {
+    font-size: 0.6rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .isi-ulasan,
+  #tentang .isi-footer .figure-footer .caption-footer p,
+  #tentang .isi-footer .navigation a {
+    font-size: 0.7rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex2-ulasan,
+  #ulasan .berikan-ulasan,
+  #tentang #copyright-footer,
+  #tentang .isi-footer h5 {
+    font-size: 0.9rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  #ulasan .wadah-ulasan .panah-ulasan #kiri-ulasan,
+  #ulasan .wadah-ulasan .panah-ulasan #kanan-ulasan {
+    font-size: 1.9rem;
+  }
+
+  /* tentang */
+  /* #tentang .isi-footer .figure-footer {
+    flex-basis: 45%;
+  } */
+
+  #tentang .isi-footer .figure-footer img {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  #tentang .isi-footer .figure-footer .caption-footer .judul-footer {
+    font-size: 1.1rem;
+  }
+
+  #tentang .isi-footer .follow-us .sosmed-footer a i {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  /* header */
+  header {
+    height: 2.6rem;
+    #hamburger {
+      display: block;
+    }
+    figure {
+      margin: -0.6rem 0;
+    }
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 2rem 0;
+    position: absolute;
+    background-color: rgba(42, 0, 1, 0.5);
+    backdrop-filter: blur(6px);
+    width: 11rem;
+    padding-top: 2rem;
+    right: 0;
+    top: 3.2rem;
+    height: 100vh;
+    z-index: 99999;
+    transform: translateX(100%);
+    transition: all 0.4s ease-in-out;
+    align-items: center;
+  }
+
+  header nav ul.active {
+    transform: translateX(0);
+  }
+
+  header .tentang {
+    margin: 0;
+    margin-right: 4rem;
+  }
+
+  /* beranda */
+  #beranda .galendo-slider .wadah-gambar {
+    width: 85%;
+  }
+
+  #beranda {
+    flex-direction: column-reverse;
+    padding-right: 1rem;
+  }
+
+  #beranda .galendo-slider .arrow #prev {
+    left: 1rem;
+    position: absolute;
+  }
+
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(2) {
+    margin-left: -1rem;
+  }
+
+  /* keistimewaan */
+  #keistimewaan .wadah-keistimewaan {
+    flex-direction: column;
+  }
+
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel:nth-child(1),
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel:nth-child(2),
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel:nth-child(4),
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel:nth-child(5) {
+    margin-left: 0;
+  }
+
+  /* pembuatan */
+  #pembuatan {
+    padding-right: 1rem;
+  }
+
+  #pembuatan .wadah-pembuatan {
+    flex-direction: column-reverse;
+    gap: 1rem;
+
+    .artikel-pembuatan {
+      max-width: 100%;
+
+      .isi-artikel-pembuatan img {
+        width: 47px;
+      }
+      .isi-artikel-pembuatan i {
+        font-size: 47px;
+      }
+    }
+
+    .gambar-pembuatan {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+    }
+
+    .gambar-pembuatan .panah-pembuatan {
+      right: 47%;
+      top: 40%;
+    }
+
+    .gambar-pembuatan .isi-gambar-pembuatan {
+      position: relative;
+      right: 0;
+    }
+  }
+
+  /* ulasan */
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan {
+    width: 17.5rem;
+    height: 17.5rem;
+  }
+
+  /* tentang */
+  #tentang .isi-footer .figure-footer {
+    flex-basis: 60%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  /* header */
+  header {
+    padding: 0 0.5rem;
+
+    nav ul {
+      top: 2.6rem;
+    }
+  }
+
+  header nav ul li a,
+  header .tentang a,
+  #beranda .artikel-beranda p,
+  #beranda .artikel-beranda .selengkapnya,
+  #beranda .galendo-slider .kualitas h3,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    h4,
+  #pembuatan
+    .wadah-pembuatan
+    .artikel-pembuatan
+    .isi-artikel-pembuatan
+    .isi-proses
+    h3 {
+    font-size: 0.8rem;
+  }
+
+  header figure img {
+    width: 2.3rem;
+  }
+
+  /* mouse scroll */
+  .mouse-scroll .mouse {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    .mouse-wheel {
+      width: 0.9rem;
+      height: 1.4rem;
+    }
+  }
+
+  /* beranda */
+
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(2) {
+    margin-left: -1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  #beranda .galendo-slider .kualitas {
+    margin-top: 0;
+  }
+
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(2),
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(3) {
+    width: 50%;
+    margin-top: -2rem;
+  }
+
+  #beranda .galendo-slider .arrow button {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas h4,
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas p,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    p,
+  #pembuatan
+    .wadah-pembuatan
+    .artikel-pembuatan
+    .isi-artikel-pembuatan
+    .isi-proses
+    p,
+  #produk .wadah-produk .isi-produk .katalog-produk .toko,
+  #produk .wadah-produk .isi-produk .katalog-produk .beli {
+    font-size: 0.6rem;
+  }
+
+  header figure figcaption,
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas figure i,
+  #keistimewaan h3,
+  #produk h3 {
+    font-size: 1rem;
+  }
+
+  #beranda .artikel-beranda h2,
+  #keistimewaan h2,
+  #pembuatan h2,
+  #produk h2,
+  #toko h2,
+  #ulasan h2 {
+    font-size: 1.3rem;
+  }
+
+  #beranda .artikel-beranda .sertifikasi .isi-sertifikasi figure img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* keistimewaan */
+  #keistimewaan .wadah-keistimewaan .wadah-figure-keistimewaan {
+    max-width: 20rem;
+  }
+
+  /* pembuatan */
+  #pembuatan .wadah-pembuatan .gambar-pembuatan {
+    max-width: 90%;
+
+    .panah-pembuatan {
+      right: 45%;
+      top: 38%;
+
+      button {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  #pembuatan .wadah-pembuatan .artikel-pembuatan .isi-artikel-pembuatan img {
+    width: 45px;
+  }
+
+  #pembuatan .wadah-pembuatan .artikel-pembuatan .isi-artikel-pembuatan i {
+    font-size: 45px;
+  }
+
+  /* produk */
+  #produk .wadah-produk .isi-produk .katalog-produk h4,
+  .mouse-scroll p {
+    font-size: 0.7rem;
+  }
+
+  #produk .wadah-produk .isi-produk .katalog-produk .harga {
+    font-size: 0.9rem;
+  }
+
+  #produk .wadah-produk .isi-produk {
+    width: 11rem;
+  }
+
+  #produk .wadah-produk .isi-produk .katalog-produk p {
+    font-size: 0.55rem;
+  }
+
+  /* toko */
+  #toko .wadah-toko {
+    grid-template-columns: repeat(auto-fit, 16rem);
+  }
+
+  #toko .wadah-toko .isi-toko .ket-toko h4 {
+    font-size: 0.6rem;
+  }
+
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .wadah-ket-toko,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .rating,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .buka,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .telepon,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .lihat-detail {
+    font-size: 0.5rem;
+  }
+
+  /* ulasan */
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .toko-ulasan,
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .tanggal-ulasan,
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .rating-ulasan,
+  #tentang .isi-footer .emailphone-footer p {
+    font-size: 0.7rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .alamat-ulasan {
+    font-size: 0.5rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .isi-ulasan,
+  #tentang .isi-footer .figure-footer .caption-footer p,
+  #tentang .isi-footer .navigation a {
+    font-size: 0.6rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex2-ulasan,
+  #ulasan .berikan-ulasan,
+  #tentang #copyright-footer,
+  #tentang .isi-footer h5 {
+    font-size: 0.8rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan {
+    width: 15rem;
+    height: 18rem;
+  }
+
+  #ulasan .wadah-ulasan .panah-ulasan #kiri-ulasan,
+  #ulasan .wadah-ulasan .panah-ulasan #kanan-ulasan {
+    font-size: 1.7rem;
+  }
+
+  /* tentang */
+  #tentang .isi-footer .figure-footer .caption-footer .judul-footer {
+    font-size: 1rem;
+  }
+
+  #tentang .isi-footer .follow-us .sosmed-footer a i {
+    font-size: 1.6rem;
+  }
+
+  #tentang .isi-footer .figure-footer img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* header */
+  header nav ul li a,
+  header .tentang a,
+  #beranda .artikel-beranda p,
+  #beranda .artikel-beranda .selengkapnya,
+  #beranda .galendo-slider .kualitas h3,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    h4,
+  #pembuatan
+    .wadah-pembuatan
+    .artikel-pembuatan
+    .isi-artikel-pembuatan
+    .isi-proses
+    h3 {
+    font-size: 0.7rem;
+  }
+
+  header #hamburger .bar {
+    width: 1.3rem;
+    height: 2.5px;
+  }
+
+  header {
+    height: 2.5rem;
+
+    nav ul {
+      top: 2.5rem;
+    }
+  }
+
+  header figure figcaption,
+  #keistimewaan h3,
+  #produk h3 {
+    font-size: 0.9rem;
+  }
+
+  header figure img {
+    width: 2rem;
+  }
+
+  /* beranda */
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(2) {
+    margin-left: -2rem;
+  }
+
+  #beranda .galendo-slider .arrow button {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas h4,
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas p,
+  #beranda .artikel-beranda .sertifikasi .isi-sertifikasi p,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    p,
+  #pembuatan
+    .wadah-pembuatan
+    .artikel-pembuatan
+    .isi-artikel-pembuatan
+    .isi-proses
+    p,
+  #produk .wadah-produk .isi-produk .katalog-produk .beli,
+  #produk .wadah-produk .isi-produk .katalog-produk .toko {
+    font-size: 0.55rem;
+  }
+
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas figure i {
+    font-size: 1rem;
+  }
+
+  #beranda .artikel-beranda h2,
+  #keistimewaan h2,
+  #pembuatan h2,
+  #produk h2,
+  #toko h2,
+  #ulasan h2 {
+    font-size: 1.1rem;
+  }
+
+  #beranda .artikel-beranda .sertifikasi .isi-sertifikasi figure img {
+    width: 35px;
+    height: 35px;
+  }
+
+  #beranda .artikel-beranda .selengkapnya {
+    margin-top: 0;
+  }
+
+  /* keistimewaan */
+  #keistimewaan .wadah-keistimewaan .wadah-figure-keistimewaan {
+    max-width: 15rem;
+  }
+
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    img {
+    width: 35px;
+  }
+  #keistimewaan .wadah-keistimewaan .wadah-flex-keistimewaan .wadah-artikel i {
+    font-size: 28px;
+  }
+
+  /* pembuatan */
+
+  #pembuatan .wadah-pembuatan .gambar-pembuatan .panah-pembuatan {
+    right: 45%;
+    top: 38%;
+
+    button {
+      font-size: 1.3rem;
+    }
+  }
+
+  #pembuatan .wadah-pembuatan .artikel-pembuatan .isi-artikel-pembuatan img {
+    width: 40px;
+  }
+
+  #pembuatan .wadah-pembuatan .artikel-pembuatan .isi-artikel-pembuatan i {
+    font-size: 40px;
+  }
+
+  /* produk */
+  #produk .wadah-produk .isi-produk .katalog-produk h4 {
+    font-size: 0.6rem;
+  }
+
+  #produk .wadah-produk .isi-produk .katalog-produk .harga {
+    font-size: 0.8rem;
+  }
+
+  #produk .wadah-produk .isi-produk {
+    width: 10rem;
+  }
+
+  #produk .wadah-produk .isi-produk .katalog-produk p {
+    font-size: 0.5rem;
+  }
+
+  /* ulasan */
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .toko-ulasan,
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .tanggal-ulasan,
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .rating-ulasan,
+  #tentang .isi-footer .emailphone-footer p {
+    font-size: 0.6rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .alamat-ulasan {
+    font-size: 0.45rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .isi-ulasan {
+    font-size: 0.5rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex2-ulasan,
+  #ulasan .berikan-ulasan,
+  #tentang #copyright-footer,
+  #tentang .isi-footer h5 {
+    font-size: 0.7rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan {
+    width: 13rem;
+    height: 16rem;
+  }
+
+  #ulasan .wadah-ulasan .panah-ulasan #kiri-ulasan,
+  #ulasan .wadah-ulasan .panah-ulasan #kanan-ulasan {
+    font-size: 1.6rem;
+  }
+
+  /* tentang */
+  #tentang .isi-footer .figure-footer .caption-footer p,
+  #tentang .isi-footer .navigation a {
+    font-size: 0.55rem;
+  }
+
+  #tentang .isi-footer .figure-footer .caption-footer .judul-footer {
+    font-size: 0.9rem;
+  }
+
+  #tentang .isi-footer .follow-us .sosmed-footer a i {
+    font-size: 1.5rem;
+  }
+
+  #tentang .isi-footer .figure-footer img {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .mouse-scroll .mouse {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    .mouse-wheel {
+      width: 0.85rem;
+      height: 1.35rem;
+
+      .scroll {
+        width: 2.5px;
+        height: 5.6px;
+      }
+    }
+  }
+
+  .mouse-scroll p {
+    font-size: 0.65rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  /* header */
+  .mouse-scroll .mouse {
+    width: 2.3rem;
+    height: 2.3rem;
+
+    .mouse-wheel {
+      width: 0.8rem;
+      height: 1.3rem;
+
+      .scroll {
+        width: 2.4px;
+        height: 5.5px;
+      }
+    }
+  }
+
+  /* beranda */
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(2) {
+    margin-left: -2.5rem;
+  }
+
+  #beranda .galendo-slider .arrow button {
+    font-size: 1.3rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas h4,
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas p,
+  #beranda .artikel-beranda .sertifikasi .isi-sertifikasi p,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    p {
+    font-size: 0.5rem;
+  }
+
+  /* pembuatan */
+  #pembuatan .wadah-pembuatan .gambar-pembuatan .panah-pembuatan {
+    top: 37%;
+
+    button {
+      font-size: 1.2rem;
+    }
+  }
+
+  #pembuatan .wadah-pembuatan .gambar-pembuatan .isi-gambar-pembuatan::after {
+    border: 6px dashed var(--warna-coklat4);
+  }
+
+  .mouse-scroll p {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* header */
+  header nav ul li a,
+  header .tentang a,
+  #beranda .artikel-beranda p,
+  #beranda .artikel-beranda .selengkapnya,
+  #beranda .galendo-slider .kualitas h3,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    h4,
+  #pembuatan
+    .wadah-pembuatan
+    .artikel-pembuatan
+    .isi-artikel-pembuatan
+    .isi-proses
+    h3 {
+    font-size: 0.6rem;
+  }
+
+  header #hamburger .bar {
+    width: 1.25rem;
+    height: 2.2px;
+  }
+
+  header figure figcaption,
+  #keistimewaan h3,
+  #produk h3 {
+    font-size: 0.8rem;
+  }
+
+  header figure img {
+    width: 1.8rem;
+  }
+
+  /* beranda */
+  #beranda .galendo-slider .wadah-gambar .gambar-galendo img:nth-child(2) {
+    margin-left: -4rem;
+  }
+
+  #beranda .galendo-slider .arrow button {
+    font-size: 1.3rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas h4,
+  #beranda .galendo-slider .kualitas .kualitas-flex .isi-kualitas p,
+  #beranda .artikel-beranda .sertifikasi .isi-sertifikasi p,
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    article
+    p,
+  #pembuatan
+    .wadah-pembuatan
+    .artikel-pembuatan
+    .isi-artikel-pembuatan
+    .isi-proses
+    p,
+  #produk .wadah-produk .isi-produk .katalog-produk p {
+    font-size: 0.45rem;
+  }
+
+  #beranda .artikel-beranda h2,
+  #keistimewaan h2,
+  #pembuatan h2,
+  #produk h2,
+  #toko h2,
+  #ulasan h2 {
+    font-size: 1rem;
+  }
+
+  #beranda .artikel-beranda .sertifikasi .isi-sertifikasi figure img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* keistimewaan */
+  #keistimewaan .wadah-keistimewaan .wadah-figure-keistimewaan {
+    max-width: 13rem;
+  }
+
+  #keistimewaan
+    .wadah-keistimewaan
+    .wadah-flex-keistimewaan
+    .wadah-artikel
+    img {
+    width: 30px;
+  }
+  #keistimewaan .wadah-keistimewaan .wadah-flex-keistimewaan .wadah-artikel i {
+    font-size: 25px;
+  }
+
+  /* pembuatan */
+  #pembuatan .wadah-pembuatan .gambar-pembuatan .panah-pembuatan {
+    top: 37%;
+
+    button {
+      font-size: 1rem;
+    }
+  }
+
+  #pembuatan .wadah-pembuatan .artikel-pembuatan .isi-artikel-pembuatan img {
+    width: 35px;
+  }
+
+  #pembuatan .wadah-pembuatan .artikel-pembuatan .isi-artikel-pembuatan i {
+    font-size: 35px;
+  }
+
+  /* produk */
+  #produk .wadah-produk .isi-produk .katalog-produk h4,
+  #tentang .isi-footer .emailphone-footer p {
+    font-size: 0.55rem;
+  }
+
+  #produk .wadah-produk .isi-produk .katalog-produk .harga {
+    font-size: 0.7rem;
+  }
+
+  #produk .wadah-produk .isi-produk {
+    width: 9rem;
+  }
+
+  #produk .wadah-produk .isi-produk .katalog-produk .beli,
+  #produk .wadah-produk .isi-produk .katalog-produk .toko {
+    font-size: 0.5rem;
+  }
+
+  /* toko */
+  #toko .wadah-toko {
+    grid-template-columns: repeat(auto-fit, 14rem);
+  }
+
+  #toko .wadah-toko .isi-toko .ket-toko h4 {
+    font-size: 0.5rem;
+  }
+
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .wadah-ket-toko,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .rating,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .buka,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .telepon,
+  #toko .wadah-toko .isi-toko .ket-toko .isi-ket-toko .lihat-detail {
+    font-size: 0.45rem;
+  }
+
+  /* ulasan */
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .toko-ulasan,
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .tanggal-ulasan,
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .rating-ulasan {
+    font-size: 0.5rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .alamat-ulasan {
+    font-size: 0.4rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex1-ulasan .isi-ulasan {
+    font-size: 0.45rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan .flex2-ulasan,
+  #ulasan .berikan-ulasan,
+  #tentang #copyright-footer,
+  #tentang .isi-footer h5 {
+    font-size: 0.6rem;
+  }
+
+  #ulasan .wadah-ulasan .wadah-card .card-ulasan {
+    width: 12rem;
+    height: 15rem;
+  }
+
+  #ulasan .wadah-ulasan .panah-ulasan #kiri-ulasan,
+  #ulasan .wadah-ulasan .panah-ulasan #kanan-ulasan {
+    font-size: 1.4rem;
+  }
+
+  /* tentang */
+  #tentang .isi-footer .figure-footer .caption-footer p,
+  #tentang .isi-footer .navigation a {
+    font-size: 0.5rem;
+  }
+
+  #tentang .isi-footer .figure-footer .caption-footer .judul-footer {
+    font-size: 0.8rem;
+  }
+
+  #tentang .isi-footer .follow-us .sosmed-footer a i {
+    font-size: 1.4rem;
+  }
+
+  #tentang .isi-footer .figure-footer img {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+}
