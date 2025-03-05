@@ -114,7 +114,7 @@ if ($totalUlasan >= 7) {
         </figure>
         <nav>
             <ul>
-                <li><a class="active" href="index.php#beranda">Beranda</a></li>
+                <li><a href="index.php#beranda">Beranda</a></li>
                 <li><a href="index.php#keistimewaan">Keistimewaan</a></li>
                 <li><a href="index.php#pembuatan">Pembuatan</a></li>
                 <li><a href="index.php#produk">Produk</a></li>
