@@ -81,7 +81,6 @@ const imageWidth = gambar.length > 0 ? gambar[0].clientWidth - 100 : 0;
 // Function to get multiplier based on screen width
 const getMultiplier = () => {
   const width = window.innerWidth;
-  console.log("Current window width:", width); // Debug log
 
   let multiplier;
   if (width <= 320) {
@@ -94,7 +93,6 @@ const getMultiplier = () => {
     multiplier = 1.8;
   }
 
-  console.log("Selected multiplier:", multiplier); // Debug log
   return multiplier;
 };
 
