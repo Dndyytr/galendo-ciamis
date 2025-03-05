@@ -10,57 +10,59 @@ $resultCount = $conn->query($queryCount);
 $rowCount = $resultCount->fetch_assoc();
 $totalUlasan = $rowCount['total'];
 
-if ($totalUlasan >= 7) {
-    echo "<script>alert('Batas maksimal 7 ulasan sudah tercapai!');</script>";
-    exit();
-} else {
-    // Proses penyimpanan jika jumlah ulasan masih kurang dari 10
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nama-pemberi"], $_POST["toko"], $_POST["rating-pemberi"], $_POST["ulasan-pemberi"])) {
+// Proses penyimpanan jika jumlah ulasan masih kurang dari 10
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nama-pemberi"], $_POST["toko"], $_POST["rating-pemberi"], $_POST["ulasan-pemberi"])) {
 
-        // Ambil data dari form dan bersihkan input
-        $nama_pemberi = trim($_POST["nama-pemberi"]);
-        $nama_toko = trim($_POST["toko"]);
-        $rating_ulasan = number_format((float) $_POST["rating-pemberi"], 1, '.', '');
-        $isi_ulasan = trim($_POST["ulasan-pemberi"]);
-        $tanggal_ulasan = date("d F Y"); // Format tanggal otomatis
+    if ($totalUlasan >= 7) {
+        echo "<script>alert('Batas maksimal 7 ulasan sudah tercapai!');</script>";
+        echo "<script>history.back();</script>";
+        exit();
+    }
 
-        // Ambil alamat toko berdasarkan nama toko
-        $queryAlamat = "SELECT alamat_toko FROM toko WHERE nama_toko = ?";
-        $stmtAlamat = $conn->prepare($queryAlamat);
-        $stmtAlamat->bind_param("s", $nama_toko);
-        $stmtAlamat->execute();
-        $resultAlamat = $stmtAlamat->get_result();
+    // Ambil data dari form dan bersihkan input
+    $nama_pemberi = trim($_POST["nama-pemberi"]);
+    $nama_toko = trim($_POST["toko"]);
+    $rating_ulasan = number_format((float) $_POST["rating-pemberi"], 1, '.', '');
+    $isi_ulasan = trim($_POST["ulasan-pemberi"]);
+    $tanggal_ulasan = date("d F Y"); // Format tanggal otomatis
 
-        if ($row = $resultAlamat->fetch_assoc()) {
-            $alamat_ulasan = $row["alamat_toko"];
-        } else {
-            $alamat_ulasan = "Alamat tidak ditemukan";
-        }
+    // Ambil alamat toko berdasarkan nama toko
+    $queryAlamat = "SELECT alamat_toko FROM toko WHERE nama_toko = ?";
+    $stmtAlamat = $conn->prepare($queryAlamat);
+    $stmtAlamat->bind_param("s", $nama_toko);
+    $stmtAlamat->execute();
+    $resultAlamat = $stmtAlamat->get_result();
 
-        $stmtAlamat->close();
+    if ($row = $resultAlamat->fetch_assoc()) {
+        $alamat_ulasan = $row["alamat_toko"];
+    } else {
+        $alamat_ulasan = "Alamat tidak ditemukan";
+    }
 
-        // Query untuk memasukkan data ke dalam tabel ulasan
-        $queryInsert = "INSERT INTO ulasan (nama_pemberi, nama_toko, rating_ulasan, tanggal_ulasan, alamat_ulasan, isi_ulasan) 
+    $stmtAlamat->close();
+
+    // Query untuk memasukkan data ke dalam tabel ulasan
+    $queryInsert = "INSERT INTO ulasan (nama_pemberi, nama_toko, rating_ulasan, tanggal_ulasan, alamat_ulasan, isi_ulasan) 
                         VALUES (?, ?, ?, ?, ?, ?)";
 
-        $stmtInsert = $conn->prepare($queryInsert);
-        $stmtInsert->bind_param("ssssss", $nama_pemberi, $nama_toko, $rating_ulasan, $tanggal_ulasan, $alamat_ulasan, $isi_ulasan);
+    $stmtInsert = $conn->prepare($queryInsert);
+    $stmtInsert->bind_param("ssssss", $nama_pemberi, $nama_toko, $rating_ulasan, $tanggal_ulasan, $alamat_ulasan, $isi_ulasan);
 
-        // Eksekusi query
-        if ($stmtInsert->execute()) {
-            echo "<script>alert('Ulasan berhasil dikirim!');</script>";
+    // Eksekusi query
+    if ($stmtInsert->execute()) {
+        echo "<script>alert('Ulasan berhasil dikirim!');</script>";
 
-            // Redirect untuk mencegah pengiriman ulang saat refresh
-            header("Location: " . $_SERVER['PHP_SELF']);
-            exit();
-        } else {
-            echo "<script>alert('Gagal mengirim ulasan, silakan coba lagi!');</script>";
-            // exit();
-        }
-
-        $stmtInsert->close();
+        // Redirect untuk mencegah pengiriman ulang saat refresh
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        echo "<script>alert('Gagal mengirim ulasan, silakan coba lagi!');</script>";
+        // exit();
     }
+
+    $stmtInsert->close();
 }
+
 
 
 
